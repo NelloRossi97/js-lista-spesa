@@ -17,10 +17,11 @@ const shopList = [
     "salsa di soia"
 ]
 const shopListBox = document.getElementById('shop-list');
-let listItem = document.createElement('li');
+
 
 counter = 0;
 while (counter < shopList.length && shopList){
+    let listItem = document.createElement('li');
     listItem.innerHTML += shopList[counter];
     shopListBox.appendChild(listItem);
     counter++;
