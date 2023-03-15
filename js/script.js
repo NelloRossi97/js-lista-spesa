@@ -17,12 +17,23 @@ const shopList = [
     "salsa di soia"
 ]
 const shopListBox = document.getElementById('shop-list');
-const checkBox = document.innerHTML = `<input type="checkbox" class="me-3">`
+let increment = 0;
+let counter = 0;
 
-counter = 0;
 while (counter < shopList.length && shopList){
+    const checkBox = document.innerHTML = `<input id="chkbx${increment}" type="checkbox" class="me-3">`
     let listItem = document.createElement('li');
     listItem.innerHTML += checkBox + shopList[counter];
     shopListBox.appendChild(listItem);
+    increment++;
     counter++;
 }
+
+const btnUncheck = document.querySelector('button');
+
+btnUncheck.addEventListener('click', function(){
+    let checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    for (let i = 0; i < checkboxes.length; i++){
+        checkboxes[i].checked = false;
+    }
+})
